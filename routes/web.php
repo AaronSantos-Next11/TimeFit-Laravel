@@ -1,22 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Livewire\Volt\Volt;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
+    // Rutas para la gestión de roles, permisos y notas
+    Route::get('/roles', function () {
+        return view('roles.index');
+    })->name('roles.index');
 
-    Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-    Volt::route('settings/password', 'settings.password')->name('settings.password');
-    Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
+    Route::get('/permisos', function () {
+        return view('permisos.index');
+    })->name('permisos.index');
+
+    Route::get('/notas', function () {
+        return view('user-notes.index');
+    })->name('user-notes.index');
 });
 
 require __DIR__.'/auth.php';
