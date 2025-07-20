@@ -5,7 +5,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-2xl font-bold">Gestión de Roles</h2>
-                        <button wire:click="openModal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button wire:click="openModal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                             Nuevo Rol
                         </button>
                     </div>
@@ -64,12 +64,12 @@
                                             {{ $role->created_at->format('d/m/Y') }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <button wire:click="edit({{ $role->id }})" class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <button wire:click="edit({{ $role->id }})" class="text-indigo-600 hover:text-indigo-900 mr-3 cursor-pointer">
                                                 Editar
                                             </button>
                                             <button wire:click="delete({{ $role->id }})" 
                                                     onclick="return confirm('¿Estás seguro de eliminar este rol?')"
-                                                    class="text-red-600 hover:text-red-900">
+                                                    class="text-red-600 hover:text-red-900 cursor-pointer">
                                                 Eliminar
                                             </button>
                                         </td>
@@ -129,7 +129,7 @@
                                         <input type="checkbox" 
                                                wire:model="selectedPermisos" 
                                                value="{{ $id }}"
-                                               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer">
                                         <span class="ml-2 text-sm text-gray-700">{{ $permiso }}</span>
                                     </label>
                                 @endforeach
@@ -142,11 +142,11 @@
                         <div class="flex justify-end space-x-3 mt-6">
                             <button type="button" 
                                     wire:click="closeModal"
-                                    class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                    class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer">
                                 Cancelar
                             </button>
                             <button type="submit" 
-                                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
                                 {{ $editMode ? 'Actualizar' : 'Crear' }}
                             </button>
                         </div>

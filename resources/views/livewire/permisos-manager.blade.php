@@ -5,7 +5,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="flex justify-between items-center mb-6">
                         <h2 class="text-2xl font-bold">Gestión de Permisos</h2>
-                        <button wire:click="openModal" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                        <button wire:click="openModal" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer">
                             Nuevo Permiso
                         </button>
                     </div>
@@ -55,12 +55,12 @@
                                             {{ $permiso->created_at->format('d/m/Y') }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <button wire:click="edit({{ $permiso->id }})" class="text-indigo-600 hover:text-indigo-900 mr-3">
+                                            <button wire:click="edit({{ $permiso->id }})" class="text-indigo-600 hover:text-indigo-900 mr-3 cursor-pointer">
                                                 Editar
                                             </button>
                                             <button wire:click="delete({{ $permiso->id }})" 
                                                     onclick="return confirm('¿Estás seguro de eliminar este permiso?')"
-                                                    class="text-red-600 hover:text-red-900">
+                                                    class="text-red-600 hover:text-red-900 cursor-pointer">
                                                 Eliminar
                                             </button>
                                         </td>
@@ -88,9 +88,9 @@
                             {{ $editMode ? 'Editar Permiso' : 'Crear Nuevo Permiso' }}
                         </h3>
                         <button wire:click="closeModal" class="text-gray-400 hover:text-gray-600">
-                            <span class="sr-only">Cerrar</span>
+                            <span class="sr-only ">Cerrar</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
                     </div>
@@ -130,11 +130,11 @@
                         <div class="flex justify-end space-x-3 mt-6">
                             <button type="button" 
                                     wire:click="closeModal"
-                                    class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                                    class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 cursor-pointer">
                                 Cancelar
                             </button>
                             <button type="submit" 
-                                    class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer">
                                 {{ $editMode ? 'Actualizar' : 'Crear' }}
                             </button>
                         </div>
