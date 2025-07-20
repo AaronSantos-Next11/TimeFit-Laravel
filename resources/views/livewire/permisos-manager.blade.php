@@ -80,8 +80,8 @@
 
     <!-- Modal -->
     @if($showModal)
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div class="relative top-20 mx-auto p-5 border w-11/12 md:w-1/2 shadow-lg rounded-md bg-white">
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+            <div class="relative w-full max-w-lg mx-auto p-8 border shadow-lg rounded-md bg-white">
                 <div class="mt-3">
                     <div class="flex justify-between items-center pb-4 mb-4 border-b">
                         <h3 class="text-lg font-medium text-gray-900">
@@ -96,7 +96,7 @@
                     </div>
 
                     <form wire:submit.prevent="save">
-                        <div class="mb-4">
+                        <div class="mb-6">
                             <label for="rol_id" class="block text-sm font-medium text-gray-700 mb-2">
                                 Rol
                             </label>
@@ -127,7 +127,7 @@
                             @enderror
                         </div>
 
-                        <div class="flex justify-end space-x-3">
+                        <div class="flex justify-end space-x-3 mt-6">
                             <button type="button" 
                                     wire:click="closeModal"
                                     class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500">
